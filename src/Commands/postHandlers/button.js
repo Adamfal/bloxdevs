@@ -13,7 +13,7 @@ export default async function button(interaction, name) {
         name === "GFX") {
         const createModal = new ModalBuilder()
             .setCustomId("post|createModal|" + name + "|" + interaction.customId.split("|")[2])
-            .setTitle("Create Post");
+            .setTitle("BloxDevs | Create Post ");
         const description = new TextInputBuilder()
             .setCustomId("description")
             .setLabel("What is the post description?")
