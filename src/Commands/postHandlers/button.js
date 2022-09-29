@@ -8,33 +8,17 @@ export default async function button(interaction, name) {
             return e;
         });
     }
-    else if (name === "scripting" ||
-        name === "modelling" ||
+    else if (name === "suggestion" ||
         name === "GFX") {
         const createModal = new ModalBuilder()
             .setCustomId("post|createModal|" + name + "|" + interaction.customId.split("|")[2])
-            .setTitle("BloxDevs | Create Post ");
+            .setTitle("BloxDevs | Suggest ");
         const description = new TextInputBuilder()
             .setCustomId("description")
-            .setLabel("What is the post description?")
+            .setLabel("What is your suggestion?")
             .setStyle(TextInputStyle.Paragraph)
             .setMinLength(150)
-            .setMaxLength(300);
-        const requierments = new TextInputBuilder()
-            .setCustomId("requierments")
-            .setLabel("What are the job requierments?")
-            .setStyle(TextInputStyle.Paragraph)
-            .setMaxLength(100);
-        const method = new TextInputBuilder()
-            .setCustomId("method")
-            .setLabel("Payment Method")
-            .setPlaceholder("Paypal/Robux/Other")
-            .setStyle(TextInputStyle.Short);
-        const price = new TextInputBuilder()
-            .setCustomId("price")
-            .setLabel("What is the price?")
-            .setPlaceholder("This must only be a positive integer")
-            .setStyle(TextInputStyle.Short);
+            .setMaxLength(300)
         createModal.addComponents(new ActionRowBuilder().addComponents(description), new ActionRowBuilder().addComponents(requierments), new ActionRowBuilder().addComponents(method), new ActionRowBuilder().addComponents(price));
         await interaction.showModal(createModal);
     }
