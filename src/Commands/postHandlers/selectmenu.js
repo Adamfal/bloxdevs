@@ -5,6 +5,18 @@ export default async function selectMenu(interaction, name) {
     }));
     const row = new ActionRowBuilder().addComponents([
         new ButtonBuilder()
+            .setCustomId(`post|scripting|${interaction.values[0]}`)
+            .setLabel("Scripting")
+            .setStyle(ButtonStyle.Primary),
+        new ButtonBuilder()
+            .setCustomId(`post|modelling|${interaction.values[0]}`)
+            .setLabel("Modelling")
+            .setStyle(ButtonStyle.Primary),
+        new ButtonBuilder()
+            .setCustomId(`post|GFX|${interaction.values[0]}`)
+            .setLabel("GFX")
+            .setStyle(ButtonStyle.Primary),
+        new ButtonBuilder()
             .setCustomId("post|cancel")
             .setLabel("Cancel")
             .setStyle(ButtonStyle.Danger),
@@ -15,9 +27,14 @@ export default async function selectMenu(interaction, name) {
             .setPlaceholder("Please Select One")
             .addOptions([
             {
-                label: "Suggestion",
-                value: "suggest",
+                label: "For Hire",
+                value: "fhire",
                 default: interaction.values[0] === "fhire" ? true : false,
+            },
+            {
+                label: "Looking to Hire",
+                value: "thire",
+                default: interaction.values[0] === "thire" ? true : false,
             },
         ]),
     ]);
