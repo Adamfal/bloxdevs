@@ -5,7 +5,7 @@ import modal from "./postHandlers/modal.js";
 import config from "../../config.json" assert { type: "json" };
 export default {
     name: "post",
-    description: "Post something for sale",
+    description: "Post in marketplace",
     async execute(interaction) {
         if (interaction.channelId != config.postChannel)
             return interaction.reply({
