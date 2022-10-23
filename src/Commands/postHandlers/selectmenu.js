@@ -16,6 +16,10 @@ export default async function selectMenu(interaction, name) {
             .setCustomId(`post|GFX|${interaction.values[0]}`)
             .setLabel("GFX")
             .setStyle(ButtonStyle.Primary),
+            new ButtonBuilder()
+            .setCustomId(`post|Animator|${interaction.values[0]}`)
+            .setLabel("Animator")
+            .setStyle(ButtonStyle.Primary),
         new ButtonBuilder()
             .setCustomId("post|cancel")
             .setLabel("Cancel")
